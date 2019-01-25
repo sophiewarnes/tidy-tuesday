@@ -33,7 +33,7 @@ ggplot(year_averages, aes(x = year, y = mean)) +
   scale_x_continuous(expand = c(0,0), limits = c(1990,2018), breaks = seq(1990,2020, by =10)) +
   soph_theme +
   annotate("text", x = 2014, y = 8.45, label = "2014 was the \n best year...", family = "Verdana", size = 3, colour = "gray50") +
-  annotate("text", x = 1999.75, y = 7.45, label = "...while 2000 \n was the worst!", family = "Verdana", size = 3, colour = "gray50") + 
+  annotate("text", x = 1999.75, y = 7.45, label = "...while 2000 \n was the worst!", family = "Verdana", size = 3, colour = "gray50") +
   labs(title="The golden age of TV?",
        subtitle="Average IMDB ratings from 1990 to 2018",
        x="Year of TV show",
@@ -41,7 +41,6 @@ ggplot(year_averages, aes(x = year, y = mean)) +
        caption="@SophieWarnes | Source: IMDB")
 
 # Pick out series by Joss Whedon, regex ^ indicates start of string and $ indicates end
-
 whedon <- Ratings %>%
   filter(grepl("^Angel$|Buffy the Vampire Slayer|Dollhouse|Firefly",Ratings$title))%>%
   group_by(title, seasonNumber, date)%>%
